@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 35.5%;
+	font-family: 'Inconsolata', arial, serif;
+}
+
+#image-slider {
+	position: relative;
+}
+
+#image-slider > div {
+	overflow: hidden;
+}
+
+#container {
+	position: relative;
+	overflow: hidden;
+}
+
+#sprite .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #FFF;
+	text-align: center;
+	width: 100%;
+	font-size: 6em;
+	padding: 120px 0;
+}
+#sprite{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #000000;
+    opacity: 0.7;
+}
+.text{
+	text-align: center;
+
+}
+
+h6{
+	color: white;
+	font-weight: bold;
+
+}
+h1{
+	color: #abdf6a;
+}
