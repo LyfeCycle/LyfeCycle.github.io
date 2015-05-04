@@ -5,6 +5,7 @@
 <title>LyfeCycle</title>
 
 <link rel="stylesheet" href="css/3d-corner-ribbons.css" />
+<!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
 <link rel="stylesheet" href="css/style.css" />
 <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'><script src="jquery.js"></script>
 <link rel="icon" type="image/png" href="/img/LyfeCycle.png"/>
@@ -14,23 +15,45 @@
 </head>
 <body>
 
-<div id="container">
-	<video autoplay loop muted>
-		<source src="backVid.mp4" type="video/mp4">
-	</video>
-</div>
-<div id="sprite">
-	<div class="content">
-		<h1>LyfeCycle</h1>
-		<h6>Helping riders stay safe and connected</h6>
+	<div id="container">
+		<video autoplay loop muted>
+			<source src="backVid.mp4" type="video/mp4">
+		</video>
 	</div>
-	<div class="ribbon ribbon ribbon-green">
-	    <div class="banner">
-	        	<div class="text">Coming Soon!</div>
-	    </div>
+	<div id="sprite">
+		<div class="content">
+			<h1>LyfeCycle</h1>
+			<h6>Helping riders stay safe and connected</h6>
+			<form id="input-form" action="" method="POST" target="no-target">
+				<label>
+					<span>Email Address</span>
+					<input id="email" type="text" name="email" />
+				</label>
+				<button class="btn btn-custom">
+					Sign up for Beta!
+				</button>
+			</form>
+		</div>
+		<div class="ribbon ribbon ribbon-green">
+		    <div class="banner">
+		        <div class="text">Coming Soon!</div>
+		    </div>
+		</div>
 	</div>
-</div>
 
-	
+	<script src="js/jquery.css"></script>
+	<script>
+	    $('#input-form').one('submit',function(){
+	        var inputName = encodeURIComponent($('#email').val());
+	        var baseURL = 'https://docs.google.com/forms/d/1N2LYTr8uXc3UJPRNVj_K7TpTaLAFLXbcynReS7EodlQ/formResponse?entry.524229953=';
+	        var submitRef = '&submit=Submit';
+	        var submitURL = (baseURL + inputName + submitRef);
+	        console.log(submitURL);
+	        $(this)[0].action=submitURL;
+	        // $('#input-name').addClass('active').val('Thank You!');
+	        // Go to thanks page
+	        $('#email').val('');
+	    });
+	</script>
 </body>
 </html>
